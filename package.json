@@ -1,0 +1,26 @@
+{
+  "name": "parking-api",
+  "version": "1.0.0",
+  "description": "API for Sid's Parking Boss",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "docker build . -t sids-parking-boss-api",
+    "start": "docker run -itd --rm -p 8080:8080 -v ~/Documents/configs:/app/configs sids-parking-boss-api",
+    "dev": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ignore-path .eslintignore --ext .js,.ts .",
+    "format": "prettier --inore-path .gitignore --write \"**/*.+(js|ts|json)\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.23.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "2.7.1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1"
+  }
+}
